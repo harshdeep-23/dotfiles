@@ -21,8 +21,15 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 alias ll="ls -al"
 alias k="kubectl"
 
+alias spark-shell-delta-lake='bin/spark-shell --packages io.delta:delta-core_2.12:1.1.0 --conf "spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension" --conf "spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog"'
+alias pyspark-shell-delta-lake='pyspark --packages io.delta:delta-core_2.12:1.1.0 --conf "spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension" --conf "spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog"'
+
+
 alias config='/usr/bin/git --git-dir=/Users/harsh/.cfg/ --work-tree=/Users/harsh'
 
+
+# set GOPATH
+export GOPATH=$HOME/code/go
 
 # Starship command prompt theme
 eval "$(starship init zsh)"
